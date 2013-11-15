@@ -16,6 +16,12 @@ angular.module('crocktoberApp', [
   .factory('Judges', function(angularFireCollection, fbURL) {
     return angularFireCollection(new Firebase(fbURL + 'judges'));
   })
+  .factory('Session', function() {
+    return {
+      thisJudge: null,
+      hasVoted: []
+    }
+  })
   .config(function($routeProvider) {
     $routeProvider
       .when('/', {

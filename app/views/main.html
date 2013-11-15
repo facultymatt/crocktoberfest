@@ -1,7 +1,27 @@
-<div class="hero-unit">
-  <ul ng-repeat="item in crocks">
-    <li>{{item.name}}<a class="btn btn-primary" ng-href="#/vote/{{item.$id}}">Vote</a></li>
-  </ul>
-  <input type="text" ng-model="newItem.name"/>
-  <button type="submit" ng-click="addItem()">Add New Item</button>
+<div ng-show="readyToVote">
+hasVoted: {{hasVoted}}
+    <h1 class="text-center">Crocks</h1>
+    <div class="hero-unit">
+        <ul ng-repeat="item in crocks">
+            <li>{{item.name}}
+                <a class="btn btn-primary pull-right" ng-hide="hasJudgeVoted(item.name)" ng-href="#/vote/{{item.$id}}">
+                    Vote
+                </a>
+                <span ng-show="hasJudgeVoted(item.name)" class="pull-right">Voted!</span>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+<div ng-show="!readyToVote">
+    <div class="hero-unit text-center">
+        <h1 class="text-center">Hello, judge!</h1>
+        <h2 ng-show="!thisJudge.name">What is your name?</h2>
+
+        <input ng-model="thisJudge.name" />
+
+        <button ng-show="thisJudge.name" ng-click="letsGo()" class="btn btn-primary">Lets Vote!</button>
+
+    </div>
 </div>

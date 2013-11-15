@@ -1,11 +1,13 @@
-<form name="voteForm">
 
 <h1>{{crock.name}}</h1>
 <strong>Categories</strong>
-<ul>
-    <li ng-repeat="cat in categories">
-        {{cat.name}}
-    </li>
-</ul>
+<form name="voteForm" ng-submit="castVotes()" novalidate>
+    
+    <div ng-repeat="(key, val) in categories">
+        <p>{{val.name}}</p>
+        <input ng-model="votes[key]" type="range" min="1" max="10" />
+    </div>
+
+    <button ng-disabled="voteForm.$invalid" type="submit" class="btn btn-primary">Cast Vote!</button>
 
 </form>
