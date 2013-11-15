@@ -3,6 +3,8 @@
 angular.module('crocktoberApp')
     .controller('VoteCtrl', function($scope, Categories, angularFire, $routeParams, fbURL, $rootScope, $location, Session) {
 
+        if(!Session.thisJudge) $location.url('/');
+
         var ref = new Firebase(fbURL + 'crocks/' + $routeParams.crockId);
         angularFire(ref, $scope, 'remoteCrock', {})
             .then(function() {
@@ -28,9 +30,11 @@ angular.module('crocktoberApp')
                         parsedVotes.push({
                             category: $scope.categories[key].name,
                             score: score,
-                            judge: $rootScope.thisJudge.name
+                            judge: Session.thisJudge.name
                         });
                     });
+
+                    console.log(Session.thisJudge);
 
                     // create votes object is crock has no votes
                     if(!$scope.crock.votes) $scope.crock.votes = [];

@@ -28,6 +28,10 @@ angular.module('crocktoberApp', [
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/results', {
+        templateUrl: 'views/result.html',
+        controller: 'ResultCtrl'
+      })
       .when('/vote/:crockId', {
         controller: 'VoteCtrl',
         templateUrl: 'views/vote.html'

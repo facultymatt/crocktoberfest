@@ -9,9 +9,10 @@ html, body {
 }
 
 body {
-    background: #fafafa;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #333;
+    background: #fff9d4;
+    color: #da5f3b;
+    font-family: 'Lato', sans-serif;
+    background: url(../images/background.jpg) top left repeat;
 }
 
 .hero-unit {
@@ -25,6 +26,10 @@ body {
     padding: 60px;
 }
 
+.well {
+    background: rgba(255,255,255, 0.9);
+}
+
 .hero-unit h1 {
     font-size: 60px;
     line-height: 1;
@@ -33,4 +38,10 @@ body {
 
 tr.active {
     color: red !important;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'UnifrakturMaguntia', cursive;  
+    color: #352819;
+    font-size: 2em;
 }
