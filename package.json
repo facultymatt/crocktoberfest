@@ -1,8 +1,7 @@
 {
   "name": "crocktober",
   "version": "0.0.0",
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "express": "*",
     "grunt": "~0.4.1",
     "grunt-contrib-copy": "~0.4.1",
