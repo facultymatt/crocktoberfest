@@ -2,6 +2,7 @@ $iconSpritePath: "../images/glyphicons-halflings.png";
 $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 
 @import "bootstrap-sass/lib/bootstrap";
+@import "bootstrap-sass/lib/responsive";
 
 /* Put your CSS here */
 html, body {
@@ -26,8 +27,8 @@ body {
     padding: 60px;
 }
 
-.well {
-    background: rgba(255,255,255, 0.9);
+.well, .hero-unit {
+    background: rgba(255,255,255, 0.8);
 }
 
 .hero-unit h1 {
