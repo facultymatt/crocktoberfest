@@ -7,8 +7,8 @@ angular.module('crocktoberApp', [
   'firebase'
 ])
   .value('fbURL', 'https://crocktoberfest.firebaseio.com/')
-  .factory('Crocks', function(angularFireCollection, fbURL) {
-    return angularFireCollection(new Firebase(fbURL + 'crocks'));
+  .factory('Crocks', function(angularFireCollection, fbURL, $http, $q) {
+    return angularFireCollection(new Firebase(fbURL + 'crocks'))
   })
   .factory('Categories', function(angularFireCollection, fbURL) {
     return angularFireCollection(new Firebase(fbURL + 'categories'));
@@ -20,7 +20,7 @@ angular.module('crocktoberApp', [
     return {
       thisJudge: null,
       hasVoted: []
-    }
+    };
   })
   .config(function($routeProvider) {
     $routeProvider
@@ -39,6 +39,10 @@ angular.module('crocktoberApp', [
       .when('/admin', {
         controller: 'AdminCtrl',
         templateUrl: 'views/admin.html'
+      })
+      .when('/leaderboard', {
+        controller: 'LeaderboardCtrl',
+        templateUrl: 'views/leaderboard.html'
       })
       .otherwise({
         redirectTo: '/'

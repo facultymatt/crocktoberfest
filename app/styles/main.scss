@@ -37,9 +37,12 @@ body {
     letter-spacing: -1px;
 }
 
+tr.active {
+    color: red !important;
+}
+
 h1, h2, h3, h4, h5 {
     font-family: 'UnifrakturMaguntia', cursive;  
     color: #352819;
     font-size: 2em;
 }
-
