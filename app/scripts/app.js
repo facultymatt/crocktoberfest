@@ -3,13 +3,32 @@
 angular.module('crocktoberApp', [
   'ngCookies',
   'ngResource',
-  'ngSanitize'
+  'ngSanitize',
+  'firebase'
 ])
-  .config(function ($routeProvider) {
+  .value('fbURL', 'https://crocktoberfest.firebaseio.com/')
+  .factory('Crocks', function(angularFireCollection, fbURL) {
+    return angularFireCollection(new Firebase(fbURL + 'crocks'));
+  })
+  .factory('Categories', function(angularFireCollection, fbURL) {
+    return angularFireCollection(new Firebase(fbURL + 'categories'));
+  })
+  .factory('Judges', function(angularFireCollection, fbURL) {
+    return angularFireCollection(new Firebase(fbURL + 'judges'));
+  })
+  .config(function($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
+      })
+      .when('/vote/:crockId', {
+        controller: 'VoteCtrl',
+        templateUrl: 'views/vote.html'
+      })
+      .when('/admin', {
+        controller: 'AdminCtrl',
+        templateUrl: 'views/admin.html'
       })
       .otherwise({
         redirectTo: '/'

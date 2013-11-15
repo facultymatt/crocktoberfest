@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="span6 offset3">
+        <div class="well">
+
+            <h2>Crocks</h2>
+            <ul ng-repeat="item in crocks">
+                <li>{{item.name}}</li>
+            </ul>
+            <label>Crock Name
+                <input type="text" ng-model="newCrock.name" />
+            </label>
+            <button class="btn btn-success" type="submit" ng-click="addItem(newCrock, crocks)">Add New Crock</button>
+
+        </div>
+
+        <div class="well">
+
+            <h2>Categories</h2>
+            <ul ng-repeat="item in categories">
+                <li>{{item.name}}, {{item.weight}}</li>
+            </ul>
+            <label>Category Name
+                <input type="text" ng-model="newCategory.name" />
+            </label>
+            <label>Category Weight
+                <input type="text" ng-model="newCategory.weight" />
+            </label>
+            <button class="btn btn-success" type="submit" ng-click="addItem(newCategory, categories)">Add New Category</button>
+
+        </div>
+
+        <div class="well">
+
+            <h2>Judges</h2>
+            <ul ng-repeat="item in judges">
+                <li>{{item.name}}
+                    <a class="btn btn-primary"></a>
+                </li>
+            </ul>
+            <label>Judge Name
+                <input type="text" ng-model="newJudge.name" />
+            </label>
+            <button class="btn btn-success" type="submit" ng-click="addItem(newJudge, judges)">Add New Judge</button>
+
+        </div>
+    </div>

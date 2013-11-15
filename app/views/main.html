@@ -1,9 +1,7 @@
 <div class="hero-unit">
-  <h1>'Allo, 'Allo!</h1>
-  <p>You now have</p>
-  <ul>
-      <li ng-repeat="thing in awesomeThings">{{thing}}</li>
+  <ul ng-repeat="item in crocks">
+    <li>{{item.name}}<a class="btn btn-primary" ng-href="#/vote/{{item.$id}}">Vote</a></li>
   </ul>
-  <p>installed.</p>
-  <h3>Enjoy coding! - Yeoman</h3>
+  <input type="text" ng-model="newItem.name"/>
+  <button type="submit" ng-click="addItem()">Add New Item</button>
 </div>
