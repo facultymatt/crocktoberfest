@@ -29,6 +29,7 @@ angular.module('crocktoberApp')
                     _.each($scope.votes, function(score, key) {
                         parsedVotes.push({
                             category: $scope.categories[key].name,
+                            weight: $scope.categories[key].weight,
                             score: score,
                             judge: Session.thisJudge.name
                         });

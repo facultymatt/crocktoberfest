@@ -1,7 +1,6 @@
 <h1 class="text-center">Results</h1>
     <div class="hero-unit">
-        <ul ng-repeat="item in crocks">
-            <li>{{item.name}} 100 points!
-            </li>
+        <ul ng-repeat="item in crocks | orderBy: '-score' " class="unstyled">
+            <li><strong>#{{$index + 1}} - </strong>{{item.name}} {{getPoints(item)}} pts</li>
         </ul>
     </div>
