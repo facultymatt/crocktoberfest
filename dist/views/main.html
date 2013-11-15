@@ -1,0 +1,27 @@
+<div ng-show="readyToVote">
+    <h1 class="text-center">Crocks</h1>
+    <div class="hero-unit">
+        <ul ng-repeat="item in crocks" class="unstyled">
+            <li>{{item.name}}
+                <a class="btn btn-success pull-right" ng-hide="hasJudgeVoted(item.name)" ng-href="#/vote/{{item.$id}}">
+                    Vote
+                </a>
+                <span ng-show="hasJudgeVoted(item.name)" class="pull-right">Voted!</span>
+                {{getScore(item)}}
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div ng-show="!readyToVote">
+    <div class="hero-unit text-center">
+        
+        <h2>Hello, judge!</h2>
+        <h2>What is your name?</h2>
+
+        <input type="text" ng-model="newJudge.name">
+
+        <button ng-show="newJudge.name" ng-click="letsGo()" class="btn btn-success btn-large">Start Voting!</button>
+
+    </div>
+</div>

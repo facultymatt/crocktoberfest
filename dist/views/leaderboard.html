@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="span6 offset3">
+        <div class="well">
+
+            <h2>Leaderboard</h2>
+            <table class="table table-striped">
+                <thead>
+                    <th>Name</th>
+                    <th>Total</th>
+                    <th>Weighted Average</th>
+                </thead>
+                <tr ng-repeat="crock in crocks" ng-class="{active: crocks[0] == crock}">
+                    <td>{{crock.name}}</td>
+                    <td>{{crock.total}}</td>
+                    <td>{{crock.weightedAverage}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
