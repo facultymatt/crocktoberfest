@@ -50,10 +50,6 @@ angular.module('crocktoberApp')
 
         };
 
-        // $scope.getScore = function(crock) {
-        //     console.log(crock.votes);
-        // }
-
 
         $scope.hasJudgeVoted = function(itemName) {
             var hasvoted = false;
