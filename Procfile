@@ -1,1 +1,1 @@
-web: bower install && node server
+web: bower install && grunt build && node server

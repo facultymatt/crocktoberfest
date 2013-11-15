@@ -11,7 +11,7 @@ var express = require("express"),
 app.configure(function() {
   app.use(express.methodOverride());
   app.use(express.bodyParser());
-  app.use(express.static(__dirname + '/app'));
+  app.use(express.static(__dirname + '/dist'));
   app.use(express.errorHandler({
     dumpExceptions: true,
     showStack: true
