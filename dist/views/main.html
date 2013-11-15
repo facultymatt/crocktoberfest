@@ -1,20 +1,24 @@
 <div ng-show="readyToVote">
     <h1 class="text-center">Crocks</h1>
-    <div class="hero-unit">
-        <ul ng-repeat="item in crocks" class="unstyled">
-            <li>{{item.name}}
-                <a class="btn btn-success pull-right" ng-hide="hasJudgeVoted(item.name)" ng-href="#/vote/{{item.$id}}">
-                    Vote
+    <div class="well">
+        <div class="row">
+        <ul class="unstyled">
+            <li ng-repeat="item in crocks">
+                <a class="btn btn-success btn-block" ng-hide="hasJudgeVoted(item.name)" ng-href="#/vote/{{item.$id}}">
+                    {{item.name}}
                 </a>
-                <span ng-show="hasJudgeVoted(item.name)" class="pull-right">Voted!</span>
-                {{getScore(item)}}
+                <a class="btn btn-disabled btn-block" ng-hide="!hasJudgeVoted(item.name)" ng-disabled="hasJudgeVoted(item.name)">
+                    {{item.name}}
+                </a>
+                <br>
             </li>
         </ul>
+        </div>
     </div>
 </div>
 
 <div ng-show="!readyToVote">
-    <div class="hero-unit text-center">
+    <div class="well text-center">
         
         <h2>Hello, judge!</h2>
         <h2>What is your name?</h2>

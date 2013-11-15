@@ -17,14 +17,11 @@ body {
 }
 
 .hero-unit {
-    margin: 50px auto 0 auto;
-    width: 300px;
     font-size: 18px;
     font-weight: 200;
     line-height: 30px;
     background-color: #eee;
     border-radius: 6px;
-    padding: 60px;
 }
 
 .well, .hero-unit {
@@ -45,4 +42,10 @@ h1, h2, h3, h4, h5 {
     font-family: 'UnifrakturMaguntia', cursive;  
     color: #352819;
     font-size: 2em;
+}
+
+@media (max-width: 768px) {
+.well input {
+    width: 90%;
+}
 }
