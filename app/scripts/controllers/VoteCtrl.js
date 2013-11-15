@@ -3,6 +3,8 @@
 angular.module('crocktoberApp')
     .controller('VoteCtrl', function($scope, Categories, angularFire, $routeParams, fbURL, $rootScope, $location, Session) {
 
+        if(!Session.thisJudge) $location.url('/');
+
         var ref = new Firebase(fbURL + 'crocks/' + $routeParams.crockId);
         angularFire(ref, $scope, 'remoteCrock', {})
             .then(function() {

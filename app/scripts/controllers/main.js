@@ -38,15 +38,11 @@ angular.module('crocktoberApp')
             // set local session judge
             Session.thisJudge = $scope.newJudge;
 
-            console.log('Session.thisJudge ', Session.thisJudge);
-
             // clear new judge
             $scope.newJudge = {};
 
             // lets start! 
             $scope.readyToVote = true;
-
-            console.log('Session.thisJudge ', Session.thisJudge);
 
         };
 
