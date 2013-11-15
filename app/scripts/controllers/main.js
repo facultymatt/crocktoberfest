@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('crocktoberApp')
-    .controller('MainCtrl', function($scope, $location, Crocks, Judges, $rootScope, Session) {
+    .controller('MainCtrl', function($q, $scope, $location, Crocks, Judges, $rootScope, Session, $timeout) {
         $scope.awesomeThings = [
             'HTML5 Boilerplate',
             'AngularJS',
