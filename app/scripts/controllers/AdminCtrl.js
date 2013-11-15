@@ -11,12 +11,39 @@ angular.module('crocktoberApp')
         $scope.categories = Categories;
         $scope.judges = Judges;
 
-        $scope.addItem = function(item, collection) {
-            collection.add(item);
-            
-            console.log(item);
-            item = {};
-        }
 
+        // ------------------------------
+        // Add items
+        // ------------------------------
+        $scope.addCrock = function() {
+            $scope.crocks.add($scope.newCrock);
+            $scope.newCrock = {};
+        };
+
+        $scope.addCategory = function() {
+            $scope.categories.add($scope.newCategory);
+            $scope.newCategory = {};
+        };
+
+        $scope.addJudge = function() {
+            $scope.judges.add($scope.newJudge);
+            $scope.newJudge = {};
+        };
+
+
+        // ------------------------------
+        // Remove items
+        // ------------------------------
+        $scope.removeCrock = function(item) {
+            $scope.crocks.remove(item);
+        };
+
+        $scope.removeCategory = function(item) {
+            $scope.categories.remove(item);
+        };
+
+        $scope.removeJudge = function(item) {
+            $scope.judges.remove(item);
+        };
 
     });
