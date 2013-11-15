@@ -19,16 +19,14 @@ angular.module('crocktoberApp')
         // @note using id's would be more robust but names can't be changed 
         // right now so we're good to go. 
         // ------------------------------
-        $rootScope.thisJudge = $rootScope.thisJudge || null;
 
         // dirty way to keep track of voted crocks
         //$rootScope.hasVoted = $rootScope.hasVoted || [];
 
         $scope.hasVoted = Session.hasVoted;
-        console.log('$scope.hasVoted ', $scope.hasVoted);
 
         // if we have a judge stored, we can vote!
-        if ($rootScope.thisJudge) $scope.readyToVote = true;
+        if (Session.thisJudge) $scope.readyToVote = true;
 
         $scope.newJudge = {};
 
@@ -38,7 +36,9 @@ angular.module('crocktoberApp')
             $scope.judges.add($scope.newJudge);
 
             // set local session judge
-            $rootScope.thisJudge = $scope.newJudge;
+            Session.thisJudge = $scope.newJudge;
+
+            console.log('Session.thisJudge ', Session.thisJudge);
 
             // clear new judge
             $scope.newJudge = {};
@@ -46,7 +46,13 @@ angular.module('crocktoberApp')
             // lets start! 
             $scope.readyToVote = true;
 
+            console.log('Session.thisJudge ', Session.thisJudge);
+
         };
+
+        // $scope.getScore = function(crock) {
+        //     console.log(crock.votes);
+        // }
 
 
         $scope.hasJudgeVoted = function(itemName) {

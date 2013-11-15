@@ -28,9 +28,11 @@ angular.module('crocktoberApp')
                         parsedVotes.push({
                             category: $scope.categories[key].name,
                             score: score,
-                            judge: $rootScope.thisJudge.name
+                            judge: Session.thisJudge.name
                         });
                     });
+
+                    console.log(Session.thisJudge);
 
                     // create votes object is crock has no votes
                     if(!$scope.crock.votes) $scope.crock.votes = [];

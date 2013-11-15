@@ -8,6 +8,7 @@ hasVoted: {{hasVoted}}
                     Vote
                 </a>
                 <span ng-show="hasJudgeVoted(item.name)" class="pull-right">Voted!</span>
+                {{getScore(item)}}
             </li>
         </ul>
     </div>
@@ -17,11 +18,11 @@ hasVoted: {{hasVoted}}
 <div ng-show="!readyToVote">
     <div class="hero-unit text-center">
         <h1 class="text-center">Hello, judge!</h1>
-        <h2 ng-show="!thisJudge.name">What is your name?</h2>
+        <h2 ng-show="!newJudge.name">What is your name?</h2>
 
-        <input ng-model="thisJudge.name" />
+        <input ng-model="newJudge.name" />
 
-        <button ng-show="thisJudge.name" ng-click="letsGo()" class="btn btn-primary">Lets Vote!</button>
+        <button ng-show="newJudge.name" ng-click="letsGo()" class="btn btn-primary">Lets Vote!</button>
 
     </div>
 </div>
